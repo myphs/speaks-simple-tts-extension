@@ -1,0 +1,31 @@
+{
+	"description": "Speaks",
+	"manifest_version": 2,
+	"name": "Speaks",
+	"version": "1.0",
+	"homepage_url": "https://sweetdu.de",
+	"icons": {
+		"48": "icons/icon.png"
+	},
+	
+	"permissions": [
+		"<all_urls>",
+ 		"webRequest",
+ 		"contextMenus"
+	],
+	
+	
+	"background": {
+		"persistent": true,
+		"scripts": ["background.js"]
+	},
+
+
+	"applications": {
+		"gecko": {
+			"id": "speaks@sweetdu.de"
+		}
+	}
+}
+
+
