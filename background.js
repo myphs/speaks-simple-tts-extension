@@ -256,9 +256,10 @@ var do_the_tts = (_text) => {
 		rs("9", "neun")
 		
 		rs("erst1x", "ersteinmal")
-		rs("sog .", "sogenannten")
-		rs("bzgl .", "bezüglich")
-		
+		rs("sog.", "sogenannte")
+		rs("d.h.", "das heißt")
+		rs("ggf.", "gegebenenfalls")
+		rs("z.B.", "zum Beispiel")
 	}
 	
 	_text = _text.replace(/\?/g, "")
