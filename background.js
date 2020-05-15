@@ -242,6 +242,7 @@ var do_the_tts = (_text) => {
 	
 	var rate = 1.6
 	
+	console.log("TTS pre: " + _text)
 	if (lang == "de") {
 		rate = 1.7
 		rs("0", "null")
@@ -267,7 +268,7 @@ var do_the_tts = (_text) => {
 	_text = _text.replace(/\s+/g, " ")
 	_text = _text.trim()
 	
-	console.log("TTS: " + _text)
+	console.log("TTS post: " + _text)
 	
 	var ut = new SpeechSynthesisUtterance(_text);
 	ut.rate = rate
