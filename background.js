@@ -243,7 +243,7 @@ var do_the_tts = (_text) => {
 	
 	console.log("TTS pre: " + _text)
 	if (lang == "de") {
-		rate = 1.7
+		rate = 1.9
 		rs("0", "null")
 		rs("1", "eins")
 		rs("2", "zwei")
