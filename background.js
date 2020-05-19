@@ -260,6 +260,7 @@ var do_the_tts = (_text) => {
 		rs("d.h.", "das heißt")
 		rs("ggf.", "gegebenenfalls")
 		rs("z.B.", "zum Beispiel")
+		rs("k.A.", "kritischen Abschnitt")
 	}
 	
 	_text = _text.replace(/\?/g, "")
