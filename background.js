@@ -234,7 +234,6 @@ var do_the_tts = (_text) => {
 	
 	const lang = get_lang(_text)
 	
-
 	const rs = (_to_replace, _replacement) => {
 		var reg_exp = new RegExp('\\s' + _to_replace + '\\s', 'g')
 	 	_text = _text.replace(reg_exp, " " + _replacement + " ")
@@ -264,15 +263,31 @@ var do_the_tts = (_text) => {
 	}
 	
 	_text = _text.replace(/\?/g, "")
-	_text = _text.replace(/\./g, "")
-	_text = _text.replace(/\s+/g, " ")
-	_text = _text.trim()
 	
-	console.log("TTS post: " + _text)
+	var to_speak = []
 	
-	var ut = new SpeechSynthesisUtterance(_text);
-	ut.rate = rate
-	ut.lang = lang
+	for (var el of _text.split(".")) {
+		if (el.trim().length < 5) {
+			if (to_speak.length > 0) {
+				to_speak.push(to_speak.pop() + " " + el)
+			} else {
+				push(el)
+			}
+			continue;
+		}
+		to_speak.push(el)
+	}
 	
-	synth.speak(ut);
+	console.log("----- TTS post: -----")
+	for (var t of to_speak) {
+		t = t.replace(/\s+/g, " ")
+		     .trim()
+		
+		console.log(t)
+	
+		var ut = new SpeechSynthesisUtterance(t);
+		ut.rate = rate
+		ut.lang = lang
+		synth.speak(ut);
+	}
 }
