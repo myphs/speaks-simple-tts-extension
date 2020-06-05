@@ -231,6 +231,7 @@ var do_the_tts = (_text) => {
 	
 	_text = add_space_before_upper_case(_text)
 	_text = filter_slowing_characters(_text)
+	_text = _text.toLowerCase()
 	
 	const lang = get_lang(_text)
 	
@@ -249,6 +250,7 @@ var do_the_tts = (_text) => {
 	console.log("TTS pre: " + _text)
 	if (lang == "de") {
 		rate = 1.9
+		// TODO: put this into some map
 		rs("0", "null")
 		rs("1", "eins")
 		rs("2", "zwei")
@@ -265,9 +267,25 @@ var do_the_tts = (_text) => {
 		rs("d.h.", "das heißt")
 		rs("d. h.", "das heißt")
 		rs("ggf.", "gegebenenfalls")
-		rs("z.B.", "zum Beispiel")
-		rs("k.A.", "kritischen Abschnitt")
+		rs("z.b.", "zum beispiel")
 		rs("z. b.", "zum beispiel")
+		rs("k.a.", "kritischen abschnitt")
+		rs("0.", "nullte")
+		rs("1.", "erste")
+		rs("2.", "zweite")
+		rs("3.", "dritte")
+		rs("4.", "vierte")
+		rs("5.", "fünfte")
+		rs("6.", "sechste")
+		rs("7.", "siebte")
+		rs("8.", "achte")
+		rs("9.", "neute")
+		rs("10.", "zehnte")
+		rs("11.", "elfte")
+		rs("12.", "zwöfte")
+		rs("l s problem", "lese-schreib-problem")
+		rs("l s problems", "lese-schreib-problems")
+		rs("l s probleme", "lese-schreib-probleme")
 	}
 	
 	_text = _text.replace(/\?/g, "")
