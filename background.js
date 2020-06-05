@@ -263,9 +263,11 @@ var do_the_tts = (_text) => {
 		rs("erst1x", "ersteinmal")
 		rs("sog.", "sogenannte")
 		rs("d.h.", "das heißt")
+		rs("d. h.", "das heißt")
 		rs("ggf.", "gegebenenfalls")
 		rs("z.B.", "zum Beispiel")
 		rs("k.A.", "kritischen Abschnitt")
+		rs("z. b.", "zum beispiel")
 	}
 	
 	_text = _text.replace(/\?/g, "")
