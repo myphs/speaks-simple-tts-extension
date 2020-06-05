@@ -297,7 +297,7 @@ var do_the_tts = (_text) => {
 			if (to_speak.length > 0) {
 				to_speak.push(to_speak.pop() + " " + el)
 			} else {
-				push(el)
+				to_speak.push(el)
 			}
 			continue;
 		}
