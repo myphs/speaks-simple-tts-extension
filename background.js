@@ -235,7 +235,12 @@ var do_the_tts = (_text) => {
 	const lang = get_lang(_text)
 	
 	const rs = (_to_replace, _replacement) => {
+		// TODO: this must go into some [^\\s], but how does this actually work with ^?
 		var reg_exp = new RegExp('\\s' + _to_replace + '\\s', 'g')
+	 	_text = _text.replace(reg_exp, " " + _replacement + " ")
+		var reg_exp = new RegExp('^' + _to_replace + '\\s', 'g')
+	 	_text = _text.replace(reg_exp, " " + _replacement + " ")
+		var reg_exp = new RegExp('\\s' + _to_replace + '$', 'g')
 	 	_text = _text.replace(reg_exp, " " + _replacement + " ")
 	}
 	
