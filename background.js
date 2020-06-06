@@ -235,14 +235,19 @@ var do_the_tts = (_text) => {
 	
 	const lang = get_lang(_text)
 	
-	const rs = (_to_replace, _replacement) => {
-		// TODO: this must go into some [^\\s], but how does this actually work with ^?
-		var reg_exp = new RegExp('\\s' + _to_replace + '\\s', 'g')
-	 	_text = _text.replace(reg_exp, " " + _replacement + " ")
-		var reg_exp = new RegExp('^' + _to_replace + '\\s', 'g')
-	 	_text = _text.replace(reg_exp, " " + _replacement + " ")
-		var reg_exp = new RegExp('\\s' + _to_replace + '$', 'g')
-	 	_text = _text.replace(reg_exp, " " + _replacement + " ")
+	const rs = (_to_replace, _replacement, _anywhere = false) => {
+		if (_anywhere) {
+			var reg_exp = new RegExp(_to_replace, 'g')
+			_text = _text.replace(reg_exp, " " + _replacement + " ")
+		} else {
+			// TODO: this must go into some [^\\s], but how does this actually work with ^?
+			var reg_exp = new RegExp('\\s' + _to_replace + '\\s', 'g')
+			_text = _text.replace(reg_exp, " " + _replacement + " ")
+			var reg_exp = new RegExp('^' + _to_replace + '\\s', 'g')
+			_text = _text.replace(reg_exp, " " + _replacement + " ")
+			var reg_exp = new RegExp('\\s' + _to_replace + '$', 'g')
+			_text = _text.replace(reg_exp, " " + _replacement + " ")
+		}
 	}
 	
 	var rate = 1.6
@@ -262,14 +267,14 @@ var do_the_tts = (_text) => {
 		rs("8", "acht")
 		rs("9", "neun")
 		
-		rs("erst1x", "ersteinmal")
-		rs("sog.", "sogenannte")
-		rs("d.h.", "das heißt")
-		rs("d. h.", "das heißt")
-		rs("ggf.", "gegebenenfalls")
-		rs("z.b.", "zum beispiel")
-		rs("z. b.", "zum beispiel")
-		rs("k.a.", "kritischen abschnitt")
+		rs("erst1x", "ersteinmal", true)
+		rs("sog.", "sogenannte", true)
+		rs("d.h.", "das heißt", true)
+		rs("d. h.", "das heißt", true)
+		rs("ggf.", "gegebenenfalls", true)
+		rs("z.b.", "zum beispiel", true)
+		rs("z. b.", "zum beispiel", true)
+		rs("k.a.", "kritischen abschnitt", true)
 		rs("0.", "nullte")
 		rs("1.", "erste")
 		rs("2.", "zweite")
