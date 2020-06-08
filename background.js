@@ -275,6 +275,7 @@ var do_the_tts = (_text) => {
 		rs("z\\.b\\.", "zum beispiel", true)
 		rs("z\\. b\\.", "zum beispiel", true)
 		rs("k\\.a\\.", "kritischen abschnitt", true)
+		rs("prof\\.", "Professor", true)
 		rs("0\\.", "nullte")
 		rs("1\\.", "erste")
 		rs("2\\.", "zweite")
