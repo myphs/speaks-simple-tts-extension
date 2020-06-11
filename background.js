@@ -267,8 +267,10 @@ var do_the_tts = (_text) => {
 		rs("8", "acht")
 		rs("9", "neun")
 		
+		rs("sts", "schort törm skedtschjuling", true)
 		rs("erst1x", "ersteinmal", true)
 		rs("sog\\.", "sogenannte", true)
+		rs("zw\\.", "zwischen", true)
 		rs("d\\.h\\.", "das heißt", true)
 		rs("d\\. h\\.", "das heißt", true)
 		rs("ggf\\.", "gegebenenfalls", true)
