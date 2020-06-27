@@ -267,6 +267,11 @@ var do_the_tts = (_text) => {
 		rs("8", "acht")
 		rs("9", "neun")
 		
+		rs("dijkstra", "deikstra")
+		rs("“banker’salgorithm”", "bänkers algorit m")
+		rs("banker’s algorithm", "bänkers algorit m")
+		rs("bankers algorithm", "bänkers algorit m")
+		rs("banker s algorithm", "bänkers algorit m")
 		rs("sts", "schort törm skedtschjuling", true)
 		rs("i\\.d\\.r\\.", "in der regel")
 		rs("erst1x", "ersteinmal", true)
@@ -295,6 +300,9 @@ var do_the_tts = (_text) => {
 		rs("l s problem", "lese-schreib-problem")
 		rs("l s problems", "lese-schreib-problems")
 		rs("l s probleme", "lese-schreib-probleme")
+		
+		rs("aum", "Adressumsetzungsmechanismus")
+		rs("engl.", "englisch")
 	}
 	
 	_text = _text.replace(/\?/g, "")
