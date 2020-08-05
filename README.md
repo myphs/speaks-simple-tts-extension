@@ -14,7 +14,7 @@ in about two hours knowing nothing about TTS.
 # FAQ (Not really asked, because I just made them up)
 Q: Will this be on addons.mozilla.org?
 
-A: I don't know. Maybe. That's why I already came up with a name.
+A: It is now, but it's an older version: https://addons.mozilla.org/de/firefox/addon/speaks-text-to-speech/
 
 
 Q: Will this run in Chrome/Chromium/Brave/etc.?
